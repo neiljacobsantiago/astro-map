@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="is-booting">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Six photographs and the nights they came from.">
+<title>Under the Same Sky</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<canvas id="stage"></canvas>
+<div class="haze" aria-hidden="true"></div>
+
+<!-- ------------------------------------------------------------- opening -->
+<div class="open" id="open">
+  <div class="open__in">
+    <p class="kicker">Neil Jacob Santiago</p>
+    <h1 class="open__t">Under the<br>same sky</h1>
+    <p class="open__s">Six photographs, and the nights they came from.</p>
+    <div class="open__bar"><i id="openBar"></i></div>
+    <button class="btn" id="openBtn" type="button" disabled><span>Begin</span></button>
+    <p class="open__n">Sound on, if you can.</p>
+  </div>
+</div>
+
+<div class="fallback" id="fallback" hidden>
+  <p>This device can't render the sky.<br><span>Try Chrome or Safari on another device.</span></p>
+</div>
+
+<!-- ----------------------------------------------------------------- hud -->
+<div class="hud" id="hud">
+  <header class="top">
+    <span class="top__t">Under the same sky</span>
+    <span class="top__c"><b id="seen">0</b> of 6</span>
+    <button class="snd" id="sound" type="button" aria-pressed="true" title="Sound">
+      <span class="eq"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="marks" id="marks"></div>
+
+  <div class="rail" aria-hidden="true"><i class="rail__f" id="railF"></i><div id="railT"></div></div>
+
+  <div class="stack">
+    <button class="btn btn--s" id="stackBtn" type="button">
+      <i class="btn__f" id="stackFill"></i><span id="stackLbl">Hold to stack frames</span>
+    </button>
+    <p class="stack__n" id="stackNote">Faint things need more of them.</p>
+  </div>
+
+  <p class="cue" id="cue">Scroll</p>
+</div>
+
+<!-- ------------------------------------------------------------- caption -->
+<section class="cap" id="cap" hidden>
+  <button class="cap__x" id="capX" type="button" aria-label="Close">Close</button>
+  <p class="kicker" id="capDate"></p>
+  <h2 class="cap__t" id="capTitle"></h2>
+  <p class="cap__b" id="capBody"></p>
+</section>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+<div class="track" aria-hidden="true"></div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
